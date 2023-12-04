@@ -11,11 +11,6 @@ RUN apt-get update && apt-get install -y \
     rsyslog \
     && rm -rf /var/lib/apt/lists/*
 
-# debug
-RUN apt-get update && apt-get install -y \
-    lsof \
-    net-tools
-
 # goofysのインストール
 # s3をマウントするやつ
 RUN wget https://github.com/kahing/goofys/releases/latest/download/goofys \
