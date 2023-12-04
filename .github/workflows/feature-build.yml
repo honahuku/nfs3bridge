@@ -29,7 +29,7 @@ jobs:
           SHA_SHORT=$(echo $GITHUB_SHA | cut -c1-8)
           echo "BRANCH_NAME=$BRANCH_NAME" >> $GITHUB_ENV
           echo "SHA_SHORT=$SHA_SHORT" >> $GITHUB_ENV
-          echo "TAGS=ghcr.io/${{ github.repository }}/nfs3bridge:$BRANCH_NAME,ghcr.io/${{ github.repository }}/nfs3bridge:$SHA_SHORT" >> $GITHUB_ENV
+          echo "TAGS=ghcr.io/${{ github.repository }}:$BRANCH_NAME,ghcr.io/${{ github.repository }}:$SHA_SHORT" >> $GITHUB_ENV
 
       - name: Cache Docker layers
         uses: actions/cache@v2

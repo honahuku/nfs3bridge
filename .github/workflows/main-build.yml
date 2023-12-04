@@ -29,5 +29,5 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: |
-            ghcr.io/${{ github.repository }}/nfs3bridge:latest
-            ghcr.io/${{ github.repository }}/nfs3bridge:${{ github.sha_short }}
+            ghcr.io/${{ github.repository }}:latest
+            ghcr.io/${{ github.repository }}:${{ github.sha_short }}
