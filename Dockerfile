@@ -1,6 +1,9 @@
 # 基本イメージ
 FROM ubuntu:22.04
 
+# imageの説明
+LABEL org.opencontainers.image.description "This is an image built with honahuku/nfs3bridge"
+
 # 必要なパッケージのインストール
 RUN apt-get update && apt-get install -y \
     wget \
