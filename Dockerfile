@@ -1,6 +1,12 @@
 # 基本イメージ
 FROM ubuntu:22.04
 
+# imageの説明
+# ref: https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry#labelling-container-images
+LABEL org.opencontainers.image.source=https://github.com/honahuku/nfs3bridge
+LABEL org.opencontainers.image.description="This is an image built with honahuku/nfs3bridge"
+LABEL org.opencontainers.image.licenses=MIT
+
 # 必要なパッケージのインストール
 RUN apt-get update && apt-get install -y \
     wget \
@@ -10,11 +16,6 @@ RUN apt-get update && apt-get install -y \
     rpcbind \
     rsyslog \
     && rm -rf /var/lib/apt/lists/*
-
-# debug
-RUN apt-get update && apt-get install -y \
-    lsof \
-    net-tools
 
 # goofysのインストール
 # s3をマウントするやつ
